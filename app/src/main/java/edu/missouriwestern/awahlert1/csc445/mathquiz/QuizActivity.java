@@ -83,7 +83,14 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                currentIndex = (currentIndex - 1) % questionBank.length;
+                if(currentIndex >= 1)
+                {
+                    currentIndex = (currentIndex - 1) % questionBank.length;
+                }
+                else
+                {
+                    currentIndex = questionBank.length - 1;
+                }
                 //int question = questionBank[currentIndex].getTextResId();
                 //questionTextView.setText(question);
                 updateQuestion();
