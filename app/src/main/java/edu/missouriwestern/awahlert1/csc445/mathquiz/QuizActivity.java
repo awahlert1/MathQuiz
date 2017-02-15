@@ -1,5 +1,6 @@
 package edu.missouriwestern.awahlert1.csc445.mathquiz;
 
+        import android.content.Intent;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
@@ -32,6 +33,7 @@ public class QuizActivity extends AppCompatActivity {
         Button mFalseButton;
         ImageButton mNextButton;
         ImageButton mPrevButton;
+        Button mCheatButton;
 
         questionTextView = (TextView)findViewById(R.id.question_text_view);
         updateQuestion();
@@ -41,6 +43,7 @@ public class QuizActivity extends AppCompatActivity {
 
         mTrueButton = (Button)findViewById(R.id.TrueButton);
         mFalseButton = (Button)findViewById(R.id.FalseButton);
+        mCheatButton = (Button)findViewById(R.id.cheat_button);
 
         mTrueButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -60,6 +63,20 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show(); */
                 checkAnswer(false);
             }
+        });
+
+        mCheatButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //start CheatActivity
+                //Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+                boolean answerIsTrue = questionBank[currentIndex].isAnswerTrue();
+                Intent i = CheatActivity.newIntent(QuizActivity.this, answerIsTrue);
+                startActivity(i);
+                Log.i(TAG,"Cheat Button Was Clicked");
+
+            }
+
         });
 
 
