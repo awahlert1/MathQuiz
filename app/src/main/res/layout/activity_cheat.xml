@@ -21,7 +21,7 @@
         />
 
     <TextView
-        android:text="TextView"
+        android:text="Answer will display here."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
@@ -30,12 +30,18 @@
         />
 
     <Button
-        android:text="@+id/show_answer_button"
+        android:text="Cheat!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/show_answer_button"
         tools:text="Da Button"
         />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/api_text_view"/>
 
 
 </LinearLayout>
